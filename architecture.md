@@ -226,7 +226,17 @@ then on a ticker (default 15 s). Slurm states map solver-agnostically:
 `MaxUnknown` (default 5) consecutive failures `Watch` returns instead of
 hanging forever. Terminal/requeue observations bump Prometheus counters.
 
-### 2.9 CLI (`cmd/foam-clutch`)
+### 2.9 CLI (`cmd/clutch`, installed as `clutch`)
+
+Install once with `go install ./cmd/clutch`. `it` is a short alias for
+`run`, and a leading flag with no subcommand also defaults to run, so
+these three are identical:
+
+```bash
+clutch -manifest manifest.yaml
+clutch it -manifest manifest.yaml
+clutch run -manifest manifest.yaml
+```
 
 - `run` — validate → submit → watch in one call. `-db` defaults to
   `<manifest-dir>/foam-clutch.db`. `-tail` streams solver + Slurm logs.

@@ -6,10 +6,10 @@ implements.
 
 ```text
 /home/shared/foam-clutch
-├── README.md / About.md / humanizeabout.md   # docs (start here)
+├── README.md / About.md                       # docs (start here)
 ├── go.mod / go.sum / .gitignore              # build + hygiene
 ├── client.go / client_test.go                # slurmrestd adapter (root pkg)
-├── cmd/foam-clutch/main.go                   # CLI: every user command
+├── cmd/clutch/main.go                          # CLI (`clutch` command)
 ├── internal/
 │   ├── manifest/    # YAML contract (manifest.go, tests, example.yaml)
 │   ├── preflight/   # case safety checks
@@ -35,19 +35,13 @@ heavyBuoyant examples, log addresses, HTTP service, cache/run layout,
 checkpoint behavior, security model, limitations. Points here for depth.
 
 ### `About.md`
-Design essay: full architecture vision (ingest → planner/autotuner →
-stage/cache → scheduler adapter → chained jobs → telemetry → stage-out),
-tech-stack table (Go, chi, Postgres/SQLite, slurmrestd + CLI fallback,
-Apptainer, Lustre scratch, Prometheus → Grafana), and the three things to
-settle early (dictionary code execution, where the daemon runs, which user
-jobs run as). Sections 1–8 that are *not* yet built are explicitly marked
-as roadmap, not implementation.
-
-### `humanizeabout.md`
-Plain-language walkthrough of the implemented workflow for non-HPC readers:
-manifest as contract, preflight, cache vs run dir, SQLite truth,
-scheduler adapter, cooperative checkpointing. Mirrors `About.md` without
-assuming cluster background.
+Plain-language walkthrough of the implemented workflow (renamed from
+`humanizeabout.md` in the `CLI upgrade` commit): manifest as contract,
+preflight, cache vs run dir, SQLite truth, scheduler adapter, cooperative
+checkpointing, supervision mapping, telemetry — plus what a production
+deployment still needs (identity/secrets, Postgres, mesh policy,
+operations) and performance direction. The old technical design essay that
+used to live at this path survives only in git history.
 
 ---
 
@@ -95,15 +89,19 @@ before any request, API errors inside successful responses.
 
 ---
 
-## `cmd/foam-clutch/main.go` (~700 lines) — the CLI
+## `cmd/clutch/main.go` (~730 lines) — the CLI (installed as `clutch`)
 
 Every user-facing command. All long-running commands use
 `signal.NotifyContext` (Ctrl-C safe).
 
-- `run` — the single command: validate → submit → watch. `-db` defaults
-  to `<manifest-dir>/foam-clutch.db`; fails fast on bad manifests before
+- `run` — the single command: validate → submit → watch. `it` is a short
+  alias (`clutch it …` ≡ `clutch run …`), and a leading flag with no
+  subcommand also defaults to run (`clutch -manifest m.yaml` ≡
+  `clutch run -manifest m.yaml`). `-db` defaults to
+  `<manifest-dir>/foam-clutch.db`; fails fast on bad manifests before
   touching DB/Slurm; `-tail` streams solver + Slurm logs; watch phase is
-  decoupled from the submit timeout.
+  decoupled from the submit timeout. Install once with
+  `go install ./cmd/clutch`; all commands assume `clutch` is on `PATH`.
 - `submit [-watch]` — submit only (bounded `-timeout`); `-watch` continues
   polling like `run`.
 - `validate` — prints `{manifest, report, error}` JSON; exit 1 when invalid.

@@ -148,4 +148,4 @@ heavyBuoyant/
 6. No blocked directives in the four input dirs; no escaping symlinks.
 7. Anything the job needs beyond the canonical three listed in
    `case.include`.
-8. `validate` passes, then `run` (or `submit` + `watch`).
+8. `clutch validate` passes, then `clutch it` (or `submit` + `watch`; `it` ≡ `run`).

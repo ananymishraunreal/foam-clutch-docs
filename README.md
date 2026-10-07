@@ -20,3 +20,5 @@ Conventions used across these docs:
 - `ranks` always means `resources.nodes × resources.tasksPerNode`.
 - Code references look like `internal/service/service.go:261` (file:line,
   relative to the repo root).
+- CLI examples use the installed `clutch` command (`cmd/clutch` in the
+  repo; `clutch it` ≡ `clutch run`; bare `clutch -manifest …` also runs).
