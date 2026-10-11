@@ -1,0 +1,25 @@
+Usage:
+  sluice [command]
+
+Available Commands:
+  cancel      Cancel a submitted Slurm job
+  completion  Generate the autocompletion script for the specified shell
+  doctor      Diagnose the local Sluice environment
+  help        Help about any command
+  init        Create a starter manifest
+  list        List submitted jobs
+  logs        Show or follow job log paths
+  run         
+  serve       Run the Sluice HTTP service
+  status      Show the status of a submitted job
+  submit      Submit an OpenFOAM case to Slurm
+  validate    Validate a manifest and its OpenFOAM case
+  version     Print version information
+  watch       Watch a submitted Slurm job
+
+Flags:
+  -h, --help            help for sluice
+      --no-color        disable terminal colors
+  -o, --output string   output format: table or json (default "table")
+
+Use "sluice [command] --help" for more information about a command.

@@ -1,0 +1,15 @@
+Usage:
+  sluice validate [flags]
+
+Examples:
+  sluice validate --manifest manifest.yaml
+  sluice validate --manifest examples/generic.yaml --output json
+  sluice validate --manifest manifest.yaml --no-color
+
+Flags:
+  -h, --help              help for validate
+  -m, --manifest string   path to manifest (default "manifest.yaml")
+  -o, --output string     output format: table or json (default "table")
+
+Global Flags:
+      --no-color   disable terminal colors

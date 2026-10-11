@@ -1,0 +1,17 @@
+Usage:
+  sluice list [flags]
+
+Examples:
+  sluice list
+  sluice list --state RUNNING --limit 20
+  sluice list --output json
+
+Flags:
+      --db string       SQLite database path (default "sluice.db")
+  -h, --help            help for list
+      --limit int       maximum number of jobs (default 50)
+  -o, --output string   output format: table or json (default "table")
+      --state string    filter by state
+
+Global Flags:
+      --no-color   disable terminal colors

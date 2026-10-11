@@ -1,0 +1,16 @@
+Usage:
+  sluice serve [flags]
+
+Examples:
+  sluice serve
+  sluice serve --addr :9090
+  sluice serve --db /var/lib/sluice/sluice.db
+
+Flags:
+      --addr string   listen address (default ":8080")
+      --db string     SQLite database path (default "sluice.db")
+  -h, --help          help for serve
+
+Global Flags:
+      --no-color        disable terminal colors
+  -o, --output string   output format: table or json (default "table")

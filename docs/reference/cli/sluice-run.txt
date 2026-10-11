@@ -1,0 +1,12 @@
+Usage of run:
+      --backend string           scheduler backend: auto, rest, cli (default "auto")
+      --db string                SQLite database path (default <manifest-dir>/sluice.db)
+      --dry-run                  validate, stage, and render without submitting
+      --interval duration        watch poll interval (e.g. 10s, 1m) (default 15s)
+      --manifest string          path to manifest (default "manifest.yaml")
+      --no-color                 disable terminal colors and live view
+      --no-watch                 submit and exit without watching
+  -o, --output string            output format: table or json (default "table")
+      --tail                     stream log.solver and slurm-*.out while watching
+      --tail-interval duration   log tail poll interval (default 5s)
+      --timeout duration         submit-phase timeout (0 disables) (default 5m0s)

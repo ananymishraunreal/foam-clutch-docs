@@ -1,0 +1,19 @@
+Usage:
+  sluice status [flags]
+
+Examples:
+  sluice status --db sluice.db --id <local-job-id>
+  sluice status --db sluice.db --id <local-job-id> --refresh
+  sluice status --db sluice.db --id <local-job-id> --refresh --output json
+
+Flags:
+      --backend string   scheduler backend: auto, rest, cli (default "auto")
+      --db string        SQLite database path (default "sluice.db")
+  -h, --help             help for status
+      --id string        local job ID
+  -o, --output string    output format: table or json (default "table")
+      --refresh          query Slurm once and update the local record
+      --slurm int        Slurm job ID
+
+Global Flags:
+      --no-color   disable terminal colors

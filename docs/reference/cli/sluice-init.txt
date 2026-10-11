@@ -1,0 +1,22 @@
+Usage:
+  sluice init [flags]
+
+Examples:
+  sluice init --output manifest.yaml --case ./case
+  sluice init --solver simpleFoam --nodes 2 --tasks 32
+  sluice init --name cavity --checkpoint 0
+
+Flags:
+      --case string        case directory relative to the manifest (default "./case")
+      --checkpoint int     checkpoint seconds before walltime; 0 disables (default 600)
+  -h, --help               help for init
+      --name string        Slurm/local job name (default "myCase")
+      --nodes int          node count (default 1)
+  -o, --output string      output manifest path (default "manifest.yaml")
+      --partition string   Slurm partition
+      --solver string      solver executable (default "foamRun")
+      --tasks int          tasks per node (default 4)
+      --time int           walltime in minutes (default 60)
+
+Global Flags:
+      --no-color   disable terminal colors

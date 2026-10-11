@@ -1,0 +1,20 @@
+Usage:
+  sluice submit [flags]
+
+Examples:
+  sluice submit --manifest manifest.yaml --backend cli
+  sluice submit --manifest manifest.yaml --db sluice.db --watch
+  sluice submit --manifest manifest.yaml --backend rest --timeout 2m
+
+Flags:
+      --backend string      scheduler backend: auto, rest, cli (default "auto")
+      --db string           SQLite database path (default "sluice.db")
+  -h, --help                help for submit
+      --interval duration   watch poll interval (default 15s)
+  -m, --manifest string     path to manifest (default "manifest.yaml")
+      --timeout duration    submit timeout (0 disables) (default 5m0s)
+      --watch               watch Slurm state until terminal
+
+Global Flags:
+      --no-color        disable terminal colors
+  -o, --output string   output format: table or json (default "table")

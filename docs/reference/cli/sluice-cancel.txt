@@ -1,0 +1,19 @@
+Usage:
+  sluice cancel [flags]
+
+Examples:
+  sluice cancel --db sluice.db --id <local-job-id>
+  sluice cancel --db sluice.db --slurm <slurm-job-id> --yes
+  sluice cancel --db sluice.db --id <local-job-id> --backend rest
+
+Flags:
+      --backend string   scheduler backend: auto, rest, cli (default "auto")
+      --db string        SQLite database path (default "sluice.db")
+  -h, --help             help for cancel
+      --id string        local job ID
+  -o, --output string    output format: table or json (default "table")
+      --slurm int        Slurm job ID
+      --yes              skip confirmation
+
+Global Flags:
+      --no-color   disable terminal colors

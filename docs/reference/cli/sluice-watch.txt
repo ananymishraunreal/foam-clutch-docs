@@ -1,0 +1,19 @@
+Usage:
+  sluice watch [flags]
+
+Examples:
+  sluice watch --db sluice.db --id <local-job-id> --slurm <slurm-job-id>
+  sluice watch --db sluice.db --id <local-job-id> --slurm <slurm-job-id> --backend cli
+  sluice watch --db sluice.db --id <local-job-id> --slurm <slurm-job-id> --output json
+
+Flags:
+      --backend string      scheduler backend: auto, rest, cli (default "auto")
+      --db string           SQLite database path (default "sluice.db")
+  -h, --help                help for watch
+      --id string           local job ID
+      --interval duration   watch poll interval (default 15s)
+  -o, --output string       output format: table or json (default "table")
+      --slurm int           Slurm job ID
+
+Global Flags:
+      --no-color   disable terminal colors

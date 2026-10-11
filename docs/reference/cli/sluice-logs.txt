@@ -1,0 +1,20 @@
+Usage:
+  sluice logs [flags]
+
+Examples:
+  sluice logs --manifest case/manifest.yaml --latest
+  sluice logs --db sluice.db --id <local-job-id>
+  tail -f $(sluice logs --manifest case/manifest.yaml --latest --follow=false)
+
+Flags:
+      --db string           SQLite database path
+      --follow              stream new lines; false prints paths only (default true)
+  -h, --help                help for logs
+      --id string           local job ID
+      --interval duration   stream poll interval (default 5s)
+      --latest              use the most recently submitted job
+  -m, --manifest string     manifest path (sets default database path)
+
+Global Flags:
+      --no-color        disable terminal colors
+  -o, --output string   output format: table or json (default "table")

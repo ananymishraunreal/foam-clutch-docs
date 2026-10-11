@@ -1,0 +1,14 @@
+Usage:
+  sluice version [flags]
+
+Examples:
+  sluice version
+  sluice version --output json
+  sluice version --no-color
+
+Flags:
+  -h, --help            help for version
+  -o, --output string   output format: table or json (default "table")
+
+Global Flags:
+      --no-color   disable terminal colors

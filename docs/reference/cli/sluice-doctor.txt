@@ -1,0 +1,17 @@
+Usage:
+  sluice doctor [flags]
+
+Examples:
+  sluice doctor
+  sluice doctor --manifest manifest.yaml
+  sluice doctor --timeout 10s --output json
+
+Flags:
+      --db string          SQLite database path (default "sluice.db")
+  -h, --help               help for doctor
+  -m, --manifest string    optional manifest to validate
+  -o, --output string      output format: table or json (default "table")
+      --timeout duration   per-check timeout (default 5s)
+
+Global Flags:
+      --no-color   disable terminal colors
