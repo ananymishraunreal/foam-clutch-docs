@@ -12,8 +12,7 @@ ranks), `slurm-<id>.out` / `slurm-<id>.err`, the exact executed
 `log.reconstructPar` as produced, `processor*` for parallel runs,
 and `.foam-checkpoint-requested` when a checkpoint fired.
 
-Database (default `<manifest-dir>/sluice.db`, legacy
-`<manifest-dir>/foam-clutch.db` fallback with notice; never moved
+Database (default `<manifest-dir>/sluice.db`; never moved
 automatically). Real schema (`internal/store/store.go`):
 
 ```sql

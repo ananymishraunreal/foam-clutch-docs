@@ -4,14 +4,13 @@
 
 Derived from `internal/manifest/manifest.go` types and `Validate`.
 If a field below disagrees with that file, the file wins: update
-this doc. Legacy `apiVersion: foam-clutch/v1alpha1` loads with a
-one-line stderr deprecation warning; `sluice init` writes
-`sluice/v1alpha1`. Unknown fields are rejected (`KnownFields`).
+this doc. `sluice init` writes `sluice/v1alpha1`. Unknown fields
+are rejected (`KnownFields`).
 
 <!-- verify:manifest -->
 
 ```yaml
-apiVersion: sluice/v1alpha1   # required; this or foam-clutch/v1alpha1
+apiVersion: sluice/v1alpha1   # required
 name: myCase                  # required; no newlines; Slurm + local name
 case:
   path: ./case                # required; absolute after resolving

@@ -2,8 +2,7 @@
 # Metrics reference
 
 
-From `internal/telemetry/metrics.go` (prefix `sluice_`; the old
-`foam_clutch_*` names were removed with no dual emission). All type
+From `internal/telemetry/metrics.go` (prefix `sluice_`). All type
 counter, no labels. Captured from a live `serve` (all zero at start):
 
 ```text

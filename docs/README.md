@@ -32,7 +32,6 @@
   [metrics](reference/metrics.md), [HTTP API](reference/http-api.md),
   [files](reference/files-and-directories.md)
 - [Roadmap](roadmap.md) (not features), [ADRs](adr/),
-  [migration](migration.md)
 
 ## Concepts
 
