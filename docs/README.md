@@ -21,8 +21,7 @@
   catch, hardening checklist.
 - [Architecture](architecture.md): pipeline, state machine, crash
   semantics.
-- [HTTP service](../guides/http-service.md): see
-  [guides/http-service.md](guides/http-service.md).
+- [HTTP service](guides/http-service.md): endpoints, auth, what is not exposed.
 
 ## Track 3: change it (contributor / hiring manager)
 

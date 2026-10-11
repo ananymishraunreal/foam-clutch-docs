@@ -8,7 +8,7 @@ Generated from the real binary via `scripts/capture-cli.sh`
 `.txt` files; change `--help` text in `cmd/sluice/` and recapture.
 Drift check: `scripts/check-docs.sh`.
 
-- [sluice](cli/sluice.txt) (root, global flags)
+- [sluice](sluice.txt) (root, global flags)
 - [version](sluice-version.txt), [init](sluice-init.txt),
   [validate](sluice-validate.txt),
   [submit](sluice-submit.txt),
